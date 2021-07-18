@@ -12,6 +12,7 @@ from .permissions import IsPostOrIsAuthenticated
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    # restricted access of apis through permission setting
     permission_classes = [IsPostOrIsAuthenticated]
 
     def create(self, request):

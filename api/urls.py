@@ -8,6 +8,7 @@ from api.views import MyObtainTokenPairView, UserViewSet
 router = routers.DefaultRouter()
 router.register(r'user', UserViewSet)
 
+# swagger ui api doc settings
 schema_view = get_schema_view(
     openapi.Info(
         title="Auth API's",
