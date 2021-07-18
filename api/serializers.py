@@ -13,6 +13,18 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('username', 'first_name', 'last_name',
                   'email', 'password')
 
+    def validate(self, attrs):
+        """
+        Method to check the user exist with given username or email
+        """
+
+        # get the user object with entered username or email.
+
+        user_obj = User.objects.filter(email=attrs.get("email")).first()
+        if user_obj:
+            raise serializers.ValidationError("Email already registered")
+        return super().validate(attrs)
+
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     """
