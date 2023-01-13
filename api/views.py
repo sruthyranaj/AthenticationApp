@@ -19,6 +19,7 @@ class UserViewSet(viewsets.ModelViewSet):
         """
         Method to customize user creation by generating hashed password
         """
+        
         # make password will create the hash value of currently entered
         # password before save in to the database
         request.data['password'] = make_password(
