@@ -17,7 +17,6 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def create(self, request):
         """
-        
         Method to customize user creation by generating hashed password
         """
         # make password will create the hash value of currently entered
