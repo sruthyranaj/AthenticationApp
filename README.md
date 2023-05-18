@@ -4,6 +4,7 @@ python version - 3.8.10
 django version - 3.2.5
 
 
+
 ## Setup
   - Setup virtual environment
   ```sh
